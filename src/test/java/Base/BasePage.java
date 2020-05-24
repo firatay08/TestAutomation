@@ -44,7 +44,7 @@ public class BasePage{
     }
 
     public void clickElement(String element){
-        webElement(By.xpath(element)).click();
+        webDriver.findElement(By.xpath(element)).click();
     }
 
     public void pressEnter()  {

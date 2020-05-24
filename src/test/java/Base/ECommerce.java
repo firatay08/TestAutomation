@@ -3,12 +3,16 @@ package Base;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class ECommerce extends BasePage {
 
     String productName1;
-
     public void selectProduct(){
         Random rastgele = new Random();
         int rastgeleSayi = rastgele.nextInt(20)+1;
@@ -17,9 +21,8 @@ public class ECommerce extends BasePage {
         pause(3000);
         String productName="//div[@class='proDetail']/div[1]/div/h1";
         productName1=webElement(By.xpath(productName)).getText();
-        System.out.println(productName1);
         String productPrice="//*[@id=\"contentProDetail\"]/div/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div/ins";
-        System.out.println(webElement(By.xpath(productPrice)).getText());
+        WriteFile(webElement(By.xpath(productName)).getText(),webElement(By.xpath(productPrice)).getText());
     }
 
     public void addBasket(){
@@ -35,4 +38,19 @@ public class ECommerce extends BasePage {
         }
         System.out.println("çalıştı");
     }
+
+    public void WriteFile(String str1, String str2) {
+
+
+        File file = new File("src/test/resources/TxtFile/Product.txt");
+        try{
+            BufferedWriter br = new BufferedWriter(new FileWriter(file, false));
+            br.write(str1+" - "+str2);
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Unable to read file " +file.toString());
+        }
+
+    }
+
 }

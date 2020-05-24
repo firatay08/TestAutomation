@@ -20,11 +20,11 @@ Feature: LoginAplication
     And "Bilgisayar - n11.com - 2" sayfasının açıldığını görürüm
     And rasgele ürün seç
     And sepete ekle ve kontrol et
-    And "//span[text()='+']" öğesine tıklarsam
+    And "(//span[text()='+'])[1]" öğesine tıklarsam
     And 1 saniye beklersem
     Then "Toplam 2 ürün" metnini görürüm
     And "//span[@title='Sil']" öğesine tıklarsam
     And 1 saniye beklersem
     Then "Sepetiniz Boş" metnini görürüm
-    And tarayıcıyı kapatırım
+    #And tarayıcıyı kapatırım
 
