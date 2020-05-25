@@ -1,5 +1,8 @@
 Feature: LoginAplication
 
+  # Login adımında sistem beni robot olarak algılayıp blockluyor.
+  # O yüzden login adımından sonra 20 saniye bekleme komutu verdim blocklanırsam manuel olarak giriş yapıp sistemin kalan adımları uygulamasını bekliyorum
+
   @Test
   Scenario: Doğru kullanıcı adı ve şifre ile giriş
     Given taryıcıyı açarsam
@@ -8,7 +11,7 @@ Feature: LoginAplication
     And "//div[@class='btnHolder']" öğesine tıklarsam
     And "Giriş Yap" metnine tıklarsam
     And kullanıcı bilgilerini doldurursam
-    And 6 saniye beklersem
+    And 20 saniye beklersem
     And enter basarsam
     And "firat ay" metnini görürüm
     And "//input[@id='searchData']" öğesini temizlersem
@@ -26,5 +29,5 @@ Feature: LoginAplication
     And "//span[@title='Sil']" öğesine tıklarsam
     And 1 saniye beklersem
     Then "Sepetiniz Boş" metnini görürüm
-    #And tarayıcıyı kapatırım
+    And tarayıcıyı kapatırım
 

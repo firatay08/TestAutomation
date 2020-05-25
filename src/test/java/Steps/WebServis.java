@@ -21,6 +21,8 @@ public class WebServis extends RestServices {
 
     @And("{string} parametreler ile {string} servisini çalıştırırsam")
     public void parametrelerIleServisiniÇalıştırırsam(String parametre, String servis) {
-        System.out.println(parametre);
+        if("PostComent".equals(servis)) {
+            postComments(parametre);
+        }
     }
 }

@@ -40,8 +40,6 @@ public class ECommerce extends BasePage {
     }
 
     public void WriteFile(String str1, String str2) {
-
-
         File file = new File("src/test/resources/TxtFile/Product.txt");
         try{
             BufferedWriter br = new BufferedWriter(new FileWriter(file, false));

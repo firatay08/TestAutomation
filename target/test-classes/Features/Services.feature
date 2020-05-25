@@ -1,10 +1,8 @@
 Feature: ServicesAplication
 
   @Test
-  Scenario: Get Post Gervisi
+  Scenario: Get Post Servisi
     Given "getPost" servisini çalıştırırsam
     And "getUser" servisini çalıştırırsam
     And "getComment" servisini çalıştırırsam
-    #post metodunu tamamlayamadım
-    And "fırat, ay, örnek@gmail.com, 0599 999 99 99" parametreler ile "postUser" servisini çalıştırırsam
-    And "3, foto ışığı hakkında , çok beğendim ama karanlık çıkmış" parametreler ile "PostComent" servisini çalıştırırsam
+    And "3, Fırat Ay, firat.ay08@gmail.com, fotoğrafı çok beğendim" parametreler ile "PostComent" servisini çalıştırırsam
