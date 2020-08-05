@@ -6,6 +6,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
@@ -58,6 +60,11 @@ public class AnaIslemler {
         webDriver.findElement(By.xpath("//body")).sendKeys(Keys.ENTER);
     }
 
+    public void pressKey(String key)  {
+        String value="Keys."+key;
+        webDriver.findElement(By.xpath("//body")).sendKeys(value);
+    }
+
 
     public void clickText(String text){
         String newText="//*[text()='"+text+"']";
@@ -88,7 +95,6 @@ public class AnaIslemler {
 
     public void textElement(String element, String text){
         JsonIslemleri json=new JsonIslemleri();
-       // webDriver.findElement(By.xpath(json.getElement(element)))
         webDriver.findElement(By.xpath(json.getElement(element))).sendKeys(text);
     }
 
@@ -104,9 +110,26 @@ public class AnaIslemler {
 
 
     public void setSelecbox(String element, String value){
+        //sonIslemleri json=new JsonIslemleri();
+        WebElement test =webDriver.findElement(By.id("#Ecom_Payment_Card_ExpDate_Month"));
+        Select dropdown = new Select(test);
+        dropdown.selectByIndex(4);
+    }
+
+    public void textRandomMAil(String element){
         JsonIslemleri json=new JsonIslemleri();
-        Select dropdown = new Select(webDriver.findElement(By.xpath(json.getElement(element))));
-        dropdown.selectByVisibleText(value);
+        webDriver.findElement(By.xpath(json.getElement(element))).sendKeys(fastestRandomStringWithMixedCase(5)+"@test.com");
+    }
+
+    public String fastestRandomStringWithMixedCase(int length) {
+        Random random = new Random();
+        final int alphabetLength = 'Z' - 'A' + 1;
+        StringBuilder result = new StringBuilder(length);
+        while (result.length() < length) {
+            final char charCaseBit = (char) (random.nextInt(2) << 5);
+            result.append((char) (charCaseBit | ('A' + random.nextInt(alphabetLength))));
+        }
+        return result.toString();
     }
 
 }

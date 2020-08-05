@@ -74,4 +74,13 @@ public class Islemler extends AnaIslemler {
     public void selectboxÖğesineDeğeriAtarsam(String oge, String deger) {
         setSelecbox(oge, deger);
     }
+
+    @And("{string} öğesine rasgele mail oluşturup yazarsam")
+    public void öğesineRasgeleMailOluşturupYazarsam(String oge) {
+        textRandomMAil(oge);
+    }
+
+    @And("{string} tuşuna basarsam")
+    public void tuşunaBasarsam(String tus) {
+    }
 }

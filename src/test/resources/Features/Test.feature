@@ -11,7 +11,7 @@ Feature: TestAplication
     And 2 saniye beklersem
     And "firstName" öğesine "fırat" yazarsam
     And "lastName" öğesine "AY" yazarsam
-    And "email" öğesine "kryı@afgsn.com" yazarsam
+    And "email" öğesine rasgele mail oluşturup yazarsam
     And "password" öğesine "1234abnABC" yazarsam
     And "checkbox" öğesine tıklarsam
     And 5 saniye beklersem
@@ -21,7 +21,6 @@ Feature: TestAplication
     And "checkbox2" öğesine tıklarsam
     And "payNow" öğesine tıklarsam
     And 10 saniye beklersem
-    #Then "1.00 AUD" metnini görürüm
     When "carHoldersNAme" öğesine "test test" yazarsam
     And "cardNumber" öğesine "123412341234" yazarsam
     And "mount" selectbox öğesine  "10" değeri atarsam
