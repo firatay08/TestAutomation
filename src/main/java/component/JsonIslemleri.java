@@ -1,32 +1,16 @@
-package Base;
-
+package component;
 
 import org.json.simple.JSONObject;
+import java.io.FileReader;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.io.FileReader;
+public class JsonIslemleri {
 
-public class JsonOperation extends BasePage{
-
-
-    public WebElement webElement(By Locator){
-        return webDriver.findElement(Locator);
-    }
-
-
-    public void fillUserInformation(){
-
-         String usurName = (String) getDataFile("Login.json").get("kullanici");
-         String usurPasword = (String) getDataFile("Login.json").get("sifre");
-         pause(2000);
-         webDriver.findElement(By.id("email")).sendKeys(usurName);
-         webDriver.findElement(By.id("password")).sendKeys(usurPasword);
-         WebElement login = webElement(By.id("loginButton"));
-         login.click();
-         pause(2000);
-
+    public String getElement(String elementKey){
+        String sonuc = (String) getDataFile("Test.json").get(elementKey);
+        return sonuc;
     }
 
     protected JSONObject getDataFile(String dataFileName) {
@@ -43,4 +27,8 @@ public class JsonOperation extends BasePage{
         }
         return testObject;
     }
+
 }
+
+
+

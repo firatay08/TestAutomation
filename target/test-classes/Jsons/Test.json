@@ -1,0 +1,18 @@
+{
+  "subscribe": "//a[@name='Subscribe']",
+  "subscribe2": "(//a[text()='SUBSCRIBE'])[2]",
+  "firstName": "//input[@name='FirstName']",
+  "lastName": "//input[@name='LastName']",
+  "email": "//input[@name='EmailOrPhone']",
+  "password": "//input[@name='Password']",
+  "checkbox": "//div[@class='custom-checkbox']",
+  "createAccount": "//input[@value='CREATE ACCOUNT']",
+  "checkbox2": "//*[@id='form-basket']/div[1]/div[4]/div[1]",
+  "payNow": "//input[@name='pay-now']",
+  "carHoldersNAme": "//input[@id='Ecom_Payment_Card_Name']",
+  "cardNumber": "//input[@id='Ecom_Payment_Card_Number']",
+  "mount": "//input[@id='Ecom_Payment_Card_ExpDate_Month']",
+  "year": "//input[@id='Ecom_Payment_Card_ExpDate_Year']",
+  "cvv": "//input[@id='Ecom_Payment_Card_Verification']",
+  "payment": "//input[@id='submit3']"
+}
