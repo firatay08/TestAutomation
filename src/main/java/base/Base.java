@@ -1,14 +1,10 @@
-package Steps;
+package base;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-import java.util.Date;
-import java.text.*;
-
-public class Hook {
-
+public class Base {
     private long startTime;
 
     @Before
@@ -24,5 +20,4 @@ public class Hook {
         double seconds = (double)estimatedTime/1000; // saniyeye çevirmek için 1000'e bölüyoruz.
         System.out.println("Test "+seconds+" saniyede sonuçlandı.");
     }
-
 }
